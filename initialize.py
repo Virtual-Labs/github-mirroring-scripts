@@ -1,7 +1,7 @@
 import os
 import sys
 
-os.system('mkdir Virtual-labs/')	
+os.system('mkdir -p /root/Virtual-labs/')	
 os.system('python get_repo_list.py ' + sys.argv[1])
 
 result = os.path.exists('existing_github_repo_list.txt')
