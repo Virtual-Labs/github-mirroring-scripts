@@ -1,8 +1,9 @@
 import json
 import os
+import sys
 
 def get_all_repos():
-	os.system('curl -i "https://api.github.com/orgs/Virtual-labs/repos?per_page=200" > owner.json')
+	os.system('curl -i "https://api.github.com/orgs/' + sys.argv[1] + '/repos?per_page=200" > owner.json')
 	get_repo_urls()
 	
 def get_repo_urls():
