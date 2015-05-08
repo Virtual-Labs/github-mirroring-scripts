@@ -10,3 +10,4 @@ with open('latest_github_repo_list.txt', 'r') as current_list:
 		else:
 			cmd = 'git clone %s %s%s' % (line.strip(), 'Virtual-labs/', repo_name)
 			os.system(cmd)	
+	os.system('rm latest_github_repo_list.txt')
