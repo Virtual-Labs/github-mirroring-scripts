@@ -8,7 +8,7 @@ with open('list_of_repos.txt', 'r') as repos_to_clone:
 	for line in repos_to_clone:
 		line = line.strip()
 		repo_name = line.split('/')[-1].split('.git')[0]
-		if os.path.exists(repo_name) == False:
+		if os.path.exists(os.path.join(path, repo_name)) == False:
 			cmd = 'git clone %s %s%s' % (line, path, repo_name)
 		else:
 			cmd = 'git --git-dir=%s%s%s %s' % (path, repo_name, '/.git', 'pull')
